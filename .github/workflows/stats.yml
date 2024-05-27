@@ -14,7 +14,7 @@ on:
       - .github/workflows/stats.yml
       - .github/actions/deps/**
 
-name: Test, lint and docker (stats)
+name: Docker (stats)
 
 defaults:
   run:
