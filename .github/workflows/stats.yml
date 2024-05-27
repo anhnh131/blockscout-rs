@@ -52,9 +52,9 @@ jobs:
         with:
           context: "stats"
           file: "stats/Dockerfile"
-          # platforms: |
-          #   linux/amd64
-          #   linux/arm64/v8
+          platforms: |
+            linux/amd64
+            linux/arm64/v8
           push: ${{ steps.tags_extractor.outputs.tags != '' }}
           tags: ${{ steps.tags_extractor.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
