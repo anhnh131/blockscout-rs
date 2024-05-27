@@ -1,20 +1,12 @@
 on:
   push:
-    branches:
-      - 'main'
     tags:
       - 'stats/v*'
     paths:
       - stats/**
       - .github/workflows/stats.yml
-      - .github/actions/deps/**
-  pull_request:
-    paths:
-      - stats/**
-      - .github/workflows/stats.yml
-      - .github/actions/deps/**
 
-name: Test, lint and docker (stats)
+name: Docker (stats)
 
 defaults:
   run:
