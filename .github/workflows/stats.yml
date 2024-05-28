@@ -24,7 +24,7 @@ jobs:
         id: regex
         with:
           text: ${{ github.ref }}
-          regex: '^(refs\/tags\/stats\/(v\d+\.\d+\.\d+))|(refs\/heads\/(main))$'
+          regex: '^(refs\/tags\/stats\/(v\d+\.\d+\.\d+-\w+.\d+))|(refs\/heads\/(main))$'
 
       - name: Extract tag name
         id: tags_extractor
@@ -52,9 +52,9 @@ jobs:
         with:
           context: "stats"
           file: "stats/Dockerfile"
-          platforms: |
-            linux/amd64
-            linux/arm64/v8
+          # platforms: |
+          #   linux/amd64
+          #   linux/arm64/v8
           push: ${{ steps.tags_extractor.outputs.tags != '' }}
           tags: ${{ steps.tags_extractor.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
